@@ -1,0 +1,43 @@
+    <!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="index :: header"></head>
+    <body>
+        <h5 class="text-center my-2">Registration Form</h5>
+        <a th:href="@{/users/create}" class="btn btn-primary my-2">Create</a>
+    <hr>
+    <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">D.O.B</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Marital Status</th>
+                <th scope="col">Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="user : ${user}">
+                <th scope="row">1</th>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.dob}"></td>
+                <td th:text="${user.gender}"></td>
+                <td th:text="${user.maritalStatus}"></td>
+                <td th:text="${user.number}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.address}"></td>
+                <td>
+                    
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    
+        <div th:replace="index :: footer"></div>
+    </body>
+    </html>
